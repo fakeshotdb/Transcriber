@@ -7,10 +7,16 @@ After that, it works fully offline.
 
 ## One-time setup
 
-Requires Python 3.9+ and ffmpeg (`brew install ffmpeg` / `winget install ffmpeg` / `sudo apt install ffmpeg`).
+Requires **Python 3.10 or newer**. The Python 3.9 that ships with macOS is too old:
+pip can't find ready-built audio packages for it and the install fails while building `av`.
+On a Mac, install a newer one with `brew install python@3.12` and use `python3.12` below.
+Check with `python3 --version`.
+
+ffmpeg is **not** required: faster-whisper decodes audio with PyAV, which bundles its own
+copy. Install it only if you want it for converting files yourself.
 
 ```bash
-python3 -m venv .venv
+python3.12 -m venv .venv                         # or python3, if that is already 3.10+
 .venv/bin/pip install -r requirements.txt        # Windows: .venv\Scripts\pip install -r requirements.txt
 ```
 
