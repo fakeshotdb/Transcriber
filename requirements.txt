@@ -1,0 +1,2 @@
+faster-whisper>=1.1
+av<19  # av 19 removed an argument faster-whisper 1.2 uses
